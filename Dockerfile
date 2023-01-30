@@ -9,7 +9,6 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 		automake autoconf libtool \
 		git subversion \
 		libatlas3-base \
-		nvidia-cuda-dev \
 		ffmpeg \
 		python3 python3-dev python3-pip \
 		python python-dev python-pip \

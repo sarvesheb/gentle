@@ -16,7 +16,8 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 	apt-get clean
 
 ADD ext /gentle/ext
-RUN cd /gentle/ext/kaldi/tools/ && make && cd ../../../../
+RUN 
+RUN cd /gentle/ext/kaldi/tools/ && ./extras/install_openblas.sh && cd ../../../../
 RUN export MAKEFLAGS=' -j4' &&  cd /gentle/ext && \
 	./install_kaldi.sh && \
 	make depend && make && rm -rf kaldi *.o

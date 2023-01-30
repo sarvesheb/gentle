@@ -7,6 +7,7 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 		libc++-dev \
 		libstdc++-6-dev zlib1g-dev \
 		automake autoconf libtool \
+		sox \
 		git subversion \
 		libatlas3-base \
 		ffmpeg \

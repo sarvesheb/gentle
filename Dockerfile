@@ -1,5 +1,10 @@
 FROM ubuntu:18.04
-
+RUN DEBIAN_FRONTEND=noninteractive && \
+	apt-get update && \
+	apt-get install -y \
+	software-properties-common --reinstall \
+	apt-get clean
+	
 RUN DEBIAN_FRONTEND=noninteractive && \
 	add-apt-repository ppa:deadsnakes/ppa && \
 	apt-get update && \

@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
 
 RUN DEBIAN_FRONTEND=noninteractive && \
+	add-apt-repository ppa:deadsnakes/ppa && \
 	apt-get update && \
 	apt-get install -y \
 		gcc g++ gfortran \

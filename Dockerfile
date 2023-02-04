@@ -32,6 +32,11 @@ RUN cd /gentle/ext/kaldi/tools/ && ./extras/install_openblas.sh && make -j 4 && 
 RUN export MAKEFLAGS=' -j4' &&  cd /gentle/ext && \
 	./install_kaldi.sh && \
 	make depend && make && rm -rf kaldi *.o
+RUN DEBIAN_FRONTEND=noninteractive && \
+	apt-get update && \
+	apt-get install -y \
+		python3.9-distutils && \
+	apt-get clean
 
 ADD . /gentle
 RUN cd /gentle && python3.9 setup.py develop

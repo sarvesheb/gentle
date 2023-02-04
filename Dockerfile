@@ -13,6 +13,7 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 		libatlas3-base \
 		ffmpeg \
 		python3 python3-dev python3-pip \
+		python3.9 \
 		python python-dev python-pip \
 		wget unzip && \
 	apt-get clean
@@ -24,7 +25,7 @@ RUN export MAKEFLAGS=' -j4' &&  cd /gentle/ext && \
 	make depend && make && rm -rf kaldi *.o
 
 ADD . /gentle
-RUN cd /gentle && python3 setup.py develop
+RUN cd /gentle && python3.9 setup.py develop
 RUN cd /gentle && ./install_models.sh
 
 EXPOSE 8765

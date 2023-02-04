@@ -40,7 +40,8 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 RUN DEBIAN_FRONTEND=noninteractive && \
 	python3.9 -m pip install --upgrade setuptools && \
 	python3.9 -m pip install --upgrade pip && \
-	python3.9 -m pip install --upgrade distlib && \
+	python3.9 -m pip install --upgrade distlib
+
 ADD . /gentle
 RUN cd /gentle && python3.9 setup.py develop
 RUN cd /gentle && ./install_models.sh

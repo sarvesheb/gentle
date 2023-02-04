@@ -37,7 +37,10 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 	apt-get install -y \
 		python3.9-distutils && \
 	apt-get clean
-
+RUN DEBIAN_FRONTEND=noninteractive && \
+	pip3 install --upgrade setuptools && \
+	pip3 install --upgrade pip && \
+	pip3 install --upgrade distlib && \
 ADD . /gentle
 RUN cd /gentle && python3.9 setup.py develop
 RUN cd /gentle && ./install_models.sh

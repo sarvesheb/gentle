@@ -40,6 +40,7 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 RUN DEBIAN_FRONTEND=noninteractive && \
 	python3.9 -m pip install --upgrade setuptools && \
 	python3.9 -m pip install --upgrade pip && \
+	python3.9 -m pip install --upgrade twisted && \
 	python3.9 -m pip install --upgrade distlib
 
 ADD . /gentle
